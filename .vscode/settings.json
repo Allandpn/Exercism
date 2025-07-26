@@ -1,0 +1,50 @@
+{
+  // Python interpreter
+  "python.defaultInterpreterPath": "${workspaceFolder}/venv/Scripts/python.exe",
+
+  // Formatação automática com Black ao salvar
+  "editor.formatOnSave": true,
+  "python.formatting.provider": "black",
+  "python.formatting.blackArgs": ["--line-length=88"],
+
+  // Linting (verificação de erros e estilo)
+  "python.linting.enabled": true,
+  "python.linting.flake8Enabled": true,
+  "python.linting.flake8Args": [
+    "--max-line-length=88",
+    "--ignore=E203,W503"
+  ],
+
+  // Organizador de imports (isort)
+  "python.sortImports.args": [
+    "--profile",
+    "black"
+  ],
+
+  // Integração com Jupyter (caso use notebooks)
+  "jupyter.interactiveWindow.mode": "perFile",
+
+  // IntelliSense com Pylance
+  "python.languageServer": "Pylance",
+  "python.analysis.typeCheckingMode": "basic", // pode usar "strict" se quiser mais rigor
+
+  // Ambiente virtual detectado automaticamente
+  "python.venvPath": "${workspaceFolder}/venv",
+
+  // Configuração geral do editor
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/.mypy_cache": true,
+    "**/.pytest_cache": true,
+    "**/.vscode": false
+  },
+  "python.testing.unittestEnabled": false,
+  "python.testing.pytestEnabled": true,
+  "python.testing.pytestArgs": [
+    "tests"
+  ]
+}
